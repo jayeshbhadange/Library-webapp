@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    h1=title 
+    if genre_list.length 
+        ul 
+            each copy in genre_list 
+                li 
+                    a(href=copy.url) #{copy.name}
+
+    else    
+        p There are no genres.

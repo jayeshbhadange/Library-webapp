@@ -1,0 +1,17 @@
+extends layout 
+block content 
+    h1 #{title}: #{genre.name} 
+    if genre_books.length 
+        p The following books are using this genre:
+        div(styple="margin-left:20px;margin-top:20px")
+            h4 books 
+            ul 
+                for book in genre_books 
+                    li 
+                        a(href=book.url) #{book.title}
+    else 
+        p Do you want to delete this genre?
+        form(method="POST")
+            div.form-group
+                input#id.form-control(name="id",type="hidden",value=genre._id)
+            button.btn.btn-danger(type="submit") Delete

@@ -1,0 +1,8 @@
+extends layout 
+block content 
+    h1 #{title} 
+    p #[strong Do you really want to delete this copy]
+    form(method="POST")
+        div.form-group
+            input#id.form-control(type="hidden",name="id",value=bookinstance._id)
+        button.btn.btn-primary(type="submit") Delete
